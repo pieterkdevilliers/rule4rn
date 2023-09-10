@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "abf95cfc-e6b6-43d7-b935-d7713ba74430"
+      }
+    },
+    "owner": "pieterkdevilliers"
   }
 }
