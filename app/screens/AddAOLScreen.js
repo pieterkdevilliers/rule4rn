@@ -1,18 +1,38 @@
-import React from 'react';
-import { ImageBackground, SafeAreaView, StyleSheet, View, Text } from 'react-native';
+import React, {useState} from 'react';
+import { ImageBackground, SafeAreaView, StyleSheet, View, Text, Button } from 'react-native';
 
 import colours from '../config/colours';
 import AddAOL from '../components/AddAOL';
 
-function AddAOLScreen(props) {
+function AddAOLScreen() {
+
+    const [aoltitle, setAOLTitle] = useState('');
+    const [aoldescription, setAOLDescription] = useState('');
+
+    const handleAOLTitleChange = (text) => {
+        setAOLTitle(text);
+        };
+
+    const handleAOLDescriptionChange = (text) => {
+        setAOLDescription(text);
+        };
+
+    const handleAddAOL = () => {
+        console.log('AOL Title:', aoltitle);
+        console.log('AOL Description:', aoldescription);
+        };
+
     return (
         <SafeAreaView style={styles.background}>
             <View>
                 <Text style={ styles.screenLabel}>Add AOL Screen</Text>
             </View>
-            <AddAOL />
+            <AddAOL
+            onAOLTitleChange={handleAOLTitleChange}
+            onAOLDescriptionChange={handleAOLDescriptionChange}
+            />
             <View style={styles.addAOLButton}>
-                <Text style={styles.buttonText}>Add AOL</Text>
+                <Button title="Add AOL" onPress={handleAddAOL} style={styles.buttonText} />
             </View>
         </SafeAreaView>
     );

@@ -3,10 +3,13 @@ import { Text, TextInput, View, StyleSheet } from 'react-native'
 
 import colours from '../config/colours';
 
-function AddSnapshot({props}) {
+function AddSnapshot({onSnapshotTextChange}) {
     return (
       <View>
-          <TextInput style={styles.textAreaInput} placeholder='Snapshot Description' />
+          <TextInput
+          style={styles.textAreaInput}
+          placeholder='Snapshot Description'
+          onChangeText={onSnapshotTextChange}/>
       </View>
     );
   }

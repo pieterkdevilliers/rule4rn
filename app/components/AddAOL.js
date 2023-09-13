@@ -3,11 +3,19 @@ import { Text, TextInput, View, StyleSheet } from 'react-native'
 
 import colours from '../config/colours';
 
-function AddAOL({props}) {
+function AddAOL({ onAOLTitleChange, onAOLDescriptionChange}) {
     return (
       <View>
-          <TextInput style={styles.textInput} placeholder='AOL Title' />
-          <TextInput style={styles.textAreaInput} placeholder='AOL Description' />
+          <TextInput
+          style={styles.textInput}
+          placeholder='AOL Title'
+          onChangeText={onAOLTitleChange}
+          />
+          <TextInput
+          style={styles.textAreaInput}
+          placeholder='AOL Description'
+          onChangeText={onAOLDescriptionChange}
+          />
       </View>
     );
   }
