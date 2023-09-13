@@ -3,6 +3,7 @@ import { ImageBackground, SafeAreaView, StyleSheet, View, Text, Button } from 'r
 
 import colours from '../config/colours';
 import AddSnapshot from '../components/AddSnapshot';
+import CustomButton from '../components/CustomButtonSecondary';
 
 function AddSnapshotScreen() {
 
@@ -24,8 +25,8 @@ function AddSnapshotScreen() {
             <AddSnapshot
             onSnapshotTextChange={handleSnapshotTextChange}
             />
-            <View style={styles.addSnapshotButton}>
-                <Button title="Add Snapshot" onPress={handleAddSnapshot} style={styles.buttonText} />
+            <View>
+                <CustomButton title="Add Snapshot" onPress={handleAddSnapshot} style={styles.buttonText} />
             </View>
         </SafeAreaView>
     );

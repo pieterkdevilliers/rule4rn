@@ -3,6 +3,7 @@ import { ImageBackground, SafeAreaView, StyleSheet, View, Text, Button } from 'r
 
 import colours from '../config/colours';
 import AddAOL from '../components/AddAOL';
+import CustomButtonPrimary from '../components/CustomButtonPrimary';
 
 function AddAOLScreen() {
 
@@ -31,8 +32,8 @@ function AddAOLScreen() {
             onAOLTitleChange={handleAOLTitleChange}
             onAOLDescriptionChange={handleAOLDescriptionChange}
             />
-            <View style={styles.addAOLButton}>
-                <Button title="Add AOL" onPress={handleAddAOL} style={styles.buttonText} />
+            <View>
+                <CustomButtonPrimary title="Add AOL" onPress={handleAddAOL} style={styles.buttonText} />
             </View>
         </SafeAreaView>
     );

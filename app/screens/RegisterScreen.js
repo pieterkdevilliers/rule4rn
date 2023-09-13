@@ -3,6 +3,7 @@ import { ImageBackground, SafeAreaView, StyleSheet, View, Text, Button } from 'r
 
 import colours from '../config/colours';
 import Register from '../components/Register';
+import CustomButtonPrimary from '../components/CustomButtonPrimary';
 
 function RegisterScreen(props) {
 
@@ -46,8 +47,8 @@ function RegisterScreen(props) {
             onPasswordChange={handlePasswordChange}
             onPassword2Change={handlePassword2Change}
             />
-            <View style={styles.registerButton}>
-                <Button title="Register" onPress={handleRegister} style={styles.buttonText} />
+            <View>
+                <CustomButtonPrimary title="Register" onPress={handleRegister} style={styles.buttonText} />
             </View>
             <Text style={ styles.screenText}>Already have an account?</Text>
             <View style={styles.loginButton}>

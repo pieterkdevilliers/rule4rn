@@ -3,6 +3,7 @@ import { ImageBackground, SafeAreaView, StyleSheet, View, Text, Button } from 'r
 
 import colours from '../config/colours';
 import Login from '../components/Login';
+import CustomButtonSecondary from '../components/CustomButtonSecondary';
 
 function WelcomeScreen() {
 
@@ -32,8 +33,8 @@ function WelcomeScreen() {
             onUsernameChange={handleUsernameChange}
             onPasswordChange={handlePasswordChange}
              />
-            <View style={styles.loginButton}>
-                <Button title="Login" onPress={handleLogin} style={styles.buttonText} />
+            <View>
+                <CustomButtonSecondary title="Login" onPress={handleLogin} style={styles.buttonText} />
             </View>
             <Text style={ styles.screenText}>Don't have an account yet?</Text>
             <View style={styles.registerButton}>
