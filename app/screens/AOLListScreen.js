@@ -2,6 +2,7 @@ import React from 'react';
 import { ImageBackground, SafeAreaView, StyleSheet, View, Text } from 'react-native';
 
 import colours from '../config/colours';
+import PrimaryCard from '../components/PrimaryCard';
 
 function AOLListScreen(props) {
     return (
@@ -10,20 +11,7 @@ function AOLListScreen(props) {
                 <Text style={ styles.screenLabel}>AOL List Screen</Text>
             </View>
             <View style={styles.aolContainer}>
-                <Text style={styles.aolTitle}>Fitness</Text>
-                <Text style={styles.aolDescription}>Killing the fat guy.</Text>
-            </View>
-            <View style={styles.aolContainer}>
-                <Text style={styles.aolTitle}>Dev</Text>
-                <Text style={styles.aolDescription}>Progress made on personal development projects.</Text>
-            </View>
-            <View style={styles.aolContainer}>
-                <Text style={styles.aolTitle}>preIPO.network</Text>
-                <Text style={styles.aolDescription}>Progress on preIPO Product, Team and Leadership.</Text>
-            </View>
-            <View style={styles.aolContainer}>
-                <Text style={styles.aolTitle}>Personal</Text>
-                <Text style={styles.aolDescription}>Personal thoughts and journal.</Text>
+                
             </View>
             <View style={styles.addAOLButton}>
                 <Text style={styles.buttonText}>Add New AOL</Text>
@@ -42,23 +30,10 @@ const styles = StyleSheet.create({
         marginBottom: 20,
 
     },
-    aolDescription: {
-        fontSize: 18,
-        color: colours.white,
-        paddingBottom: 20,
-        paddingLeft: 5,
-        paddingRight: 5,
-    },
-    aolTitle: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: colours.white,
-        padding: 10,
-    },
 
     background: {
         flex: 1,
-        backgroundColor: colours.white,
+        backgroundColor: colours.black,
     },
 
     buttonText: {
@@ -81,7 +56,7 @@ const styles = StyleSheet.create({
     screenLabel: {
         fontSize: 24,
         fontWeight: 'bold',
-        color: colours.black,
+        color: colours.white,
         padding: 20,
         alignSelf: 'center',
     },

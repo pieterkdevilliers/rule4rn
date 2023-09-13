@@ -3,17 +3,14 @@ import { ImageBackground, SafeAreaView, StyleSheet, View, Text } from 'react-nat
 
 import colours from '../config/colours';
 
-function WelcomeScreen(props) {
+function AddAOLScreen(props) {
     return (
         <SafeAreaView style={styles.background}>
             <View>
-                <Text style={ styles.screenLabel}>Welcome Screen</Text>
+                <Text style={ styles.screenLabel}>Add AOL Screen</Text>
             </View>
-            <View style={styles.loginButton}>
-                <Text style={styles.buttonText}>Login</Text>
-            </View>
-            <View style={styles.registerButton}>
-                <Text style={styles.buttonText}>Register</Text>
+            <View style={styles.addAOLButton}>
+                <Text style={styles.buttonText}>Add AOL</Text>
             </View>
         </SafeAreaView>
     );
@@ -32,14 +29,7 @@ const styles = StyleSheet.create({
         color: colours.white,
         padding: 20,
     },
-    
-    loginButton: {
-        width: '100%',
-        height: 70,
-        backgroundColor: colours.secondary,
-        alignItems: 'center',
-    },
-    registerButton: {
+    addAOLButton: {
         width: '100%',
         height: 70,
         backgroundColor: colours.primary,
@@ -54,4 +44,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default WelcomeScreen;
+export default AddAOLScreen;

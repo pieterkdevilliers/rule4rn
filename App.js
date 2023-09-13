@@ -1,10 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { View } from 'react-native';
-import AOLListScreen from './app/screens/AOLListScreen';
+import { SafeAreaView, View, StyleSheet } from 'react-native';
+
+import WelcomeScreen from './app/screens/WelcomeScreen';
 
 export default function App() {
 
   return (
-    <AOLListScreen />
+      <WelcomeScreen />
   );
 }
+
