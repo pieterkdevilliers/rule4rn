@@ -1,19 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import AOLListScreen from './app/screens/AOLListScreen';
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open  App.js!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <AOLListScreen />
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
