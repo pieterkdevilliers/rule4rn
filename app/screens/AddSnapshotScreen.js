@@ -2,6 +2,7 @@ import React from 'react';
 import { ImageBackground, SafeAreaView, StyleSheet, View, Text } from 'react-native';
 
 import colours from '../config/colours';
+import AddSnapshot from '../components/AddSnapshot';
 
 function AddSnapshotScreen(props) {
     return (
@@ -9,6 +10,7 @@ function AddSnapshotScreen(props) {
             <View>
                 <Text style={ styles.screenLabel}>Add Snapshot Screen</Text>
             </View>
+            <AddSnapshot />
             <View style={styles.addSnapshotButton}>
                 <Text style={styles.buttonText}>Add Snapshot</Text>
             </View>
@@ -30,10 +32,13 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     addSnapshotButton: {
-        width: '100%',
+        width: '90%',
         height: 70,
         backgroundColor: colours.secondary,
         alignItems: 'center',
+        alignSelf: 'center',
+        borderRadius: 10,
+        marginBottom: 20,
     },
     screenLabel: {
         fontSize: 24,

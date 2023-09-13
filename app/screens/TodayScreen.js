@@ -2,30 +2,16 @@ import React from 'react';
 import { ImageBackground, SafeAreaView, StyleSheet, View, Text } from 'react-native';
 
 import colours from '../config/colours';
+import SecondaryCard from '../components/SecondaryCard';
 
 function TodayScreen(props) {
     return (
         <SafeAreaView style={styles.background}>
             <View>
-                <Text style={ styles.screenLabel}>Snapshot List Screen</Text>
+                <Text style={ styles.screenLabel}>Today Screen</Text>
                 <Text style={ styles.screenLabel}>Selected AOL Title</Text>
             </View>
-            <View style={styles.snapshotContainer}>
-                <Text style={styles.snapshotDate}>13-08-2023</Text>
-                <Text style={styles.snapshotDetail}>Snapshot from last month.</Text>
-            </View>
-            <View style={styles.snapshotContainer}>
-                <Text style={styles.snapshotDate}>06-09-2023</Text>
-                <Text style={styles.snapshotDetail}>Snapshot from last week.</Text>
-            </View>
-            <View style={styles.snapshotContainer}>
-                <Text style={styles.snapshotDate}>12-09-2023</Text>
-                <Text style={styles.snapshotDetail}>Snapshot from yesterday.</Text>
-            </View>
-            <View style={styles.snapshotContainer}>
-                <Text style={styles.snapshotDate}>13-09-2023</Text>
-                <Text style={styles.snapshotDetail}>Snapshot from today.</Text>
-            </View>
+            <SecondaryCard />
             <View style={styles.addSnapshotButton}>
                 <Text style={styles.buttonText}>Add New Snapshot</Text>
             </View>

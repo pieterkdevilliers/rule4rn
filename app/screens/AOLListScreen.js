@@ -11,7 +11,7 @@ function AOLListScreen(props) {
                 <Text style={ styles.screenLabel}>AOL List Screen</Text>
             </View>
             <View style={styles.aolContainer}>
-                
+                <PrimaryCard />
             </View>
             <View style={styles.addAOLButton}>
                 <Text style={styles.buttonText}>Add New AOL</Text>

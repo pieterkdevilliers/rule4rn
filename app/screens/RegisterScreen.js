@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import { ImageBackground, SafeAreaView, StyleSheet, View, Text, Button } from 'react-native';
 
 import colours from '../config/colours';
-import Login from '../components/Login';
+import Register from '../components/Register';
 
-function WelcomeScreen() {
+function RegisterScreen(props) {
 
     const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [password2, setPassword2] = useState('');
 
     const handleUsernameChange = (text) => {
         setUsername(text);
@@ -17,34 +19,43 @@ function WelcomeScreen() {
         setPassword(text);
         };
 
-    const handleLogin = () => {
+        const handleEmailChange = (text) => {
+            setEmail(text);
+            };
+    
+        const handlePassword2Change = (text) => {
+            setPassword2(text);
+            };
+
+    const handleRegister = () => {
         // You can now access the username and password here for further processing.
         console.log('Username:', username);
+        console.log('Email:', email);
         console.log('Password:', password);
+        console.log('Password2:', password2);
         };
 
     return (
         <SafeAreaView style={styles.background}>
             <View>
-                <Text style={ styles.screenLabel}>Login</Text>
+                <Text style={ styles.screenLabel}>Register</Text>
             </View>
-            <Login 
+            <Register 
             onUsernameChange={handleUsernameChange}
+            onEmailChange={handleEmailChange}
             onPasswordChange={handlePasswordChange}
-             />
-            <View style={styles.loginButton}>
-                <Button title="Login" onPress={handleLogin} style={styles.buttonText} />
-            </View>
-            <Text style={ styles.screenText}>Don't have an account yet?</Text>
+            onPassword2Change={handlePassword2Change}
+            />
             <View style={styles.registerButton}>
-                <Text style={styles.buttonText}>Register Here</Text>
+                <Button title="Register" onPress={handleRegister} style={styles.buttonText} />
             </View>
-            <View>
-        </View>
+            <Text style={ styles.screenText}>Already have an account?</Text>
+            <View style={styles.loginButton}>
+                <Text style={styles.buttonText}>Login Here</Text>
+            </View>
         </SafeAreaView>
     );
 }
-
 
 const styles = StyleSheet.create({
     background: {
@@ -67,7 +78,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
         borderRadius: 10,
-        marginBottom: 150,
+        marginBottom: 20,
 
     },
     registerButton: {
@@ -77,7 +88,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf: 'center',
         borderRadius: 10,
-        marginBottom: 20,
+        marginBottom: 150,
     },
     screenLabel: {
         fontSize: 24,
@@ -95,4 +106,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default WelcomeScreen;
+export default RegisterScreen;
