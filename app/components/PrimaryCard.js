@@ -1,14 +1,14 @@
 import React from 'react'
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 import colours from '../config/colours';
 
-function PrimaryCard({title, subtitle}) {
+function PrimaryCard({title, subtitle, onPress}) {
   return (
-    <View style={styles.card}>
+    <TouchableOpacity style={styles.card} onPress={onPress}>
         <Text style={styles.cardTitle}>{title}</Text>
         <Text style={styles.cardSubtitle}>{subtitle}</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 

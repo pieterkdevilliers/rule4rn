@@ -3,18 +3,21 @@ import { ImageBackground, SafeAreaView, StyleSheet, View, Text } from 'react-nat
 
 import colours from '../config/colours';
 import PrimaryCard from '../components/PrimaryCard';
+import CustomButtonSecondary from '../components/CustomButtonSecondary';
+import AOLNavigator from '../navigation/AOLNavigator';
 
-function AOLListScreen(props) {
+function AOLListScreen({navigation}) {
     return (
         <SafeAreaView style={styles.background}>
             <View>
                 <Text style={ styles.screenLabel}>AOL List Screen</Text>
             </View>
             <View style={styles.aolContainer}>
-                <PrimaryCard />
+                <PrimaryCard title="AOL 1" onPress={() => navigation.navigate("Today")} style={styles.buttonText}/>
             </View>
             <View style={styles.addAOLButton}>
-                <Text style={styles.buttonText}>Add New AOL</Text>
+            <CustomButtonSecondary title="Add New AOL" onPress={() => navigation.navigate("Add AOL")} style={styles.buttonText} />
+                
             </View>
         </SafeAreaView>
     );

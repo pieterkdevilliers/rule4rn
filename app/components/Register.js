@@ -7,21 +7,39 @@ function Register({ onUsernameChange, onEmailChange, onPasswordChange, onPasswor
     return (
       <View>
           <TextInput
+          autoCapitalize='none'
+          autoCorrect={false}
+          icon='account'
           style={styles.textInput}
           placeholder='Username'
           onChangeText={onUsernameChange}
           />
           <TextInput
+          autoCapitalize='none'
+          autoCorrect={false}
+          icon='email'
+          keyboardType='email-address'
+          textContentType='emailAddress'
           style={styles.textInput}
           placeholder='Email'
           onChangeText={onEmailChange}
           />
           <TextInput
+          autoCapitalize='none'
+          autoCorrect={false}
+          icon='lock'
+          textContentType='password'
+          secureTextEntry={true}
           style={styles.textInput}
           placeholder='Password'
           onChangeText={onPasswordChange}
           />
           <TextInput
+          autoCapitalize='none'
+          autoCorrect={false}
+          icon='lock'
+          textContentType='password'
+          secureTextEntry={true}
           style={styles.textInput}
           placeholder='Confirm Password'
           onChangeText={onPassword2Change}

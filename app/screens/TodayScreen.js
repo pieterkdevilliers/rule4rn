@@ -3,17 +3,21 @@ import { ImageBackground, SafeAreaView, StyleSheet, View, Text } from 'react-nat
 
 import colours from '../config/colours';
 import SecondaryCard from '../components/SecondaryCard';
+import CustomButtonPrimary from '../components/CustomButtonPrimary';
+import AOLNavigator from '../navigation/AOLNavigator';
+import SnapshotNavigator from '../navigation/SnapshotNavigator';
 
-function TodayScreen(props) {
+
+function TodayScreen({navigation}) {
     return (
         <SafeAreaView style={styles.background}>
             <View>
                 <Text style={ styles.screenLabel}>Today Screen</Text>
                 <Text style={ styles.screenLabel}>Selected AOL Title</Text>
             </View>
-            <SecondaryCard />
+            <SecondaryCard title="Snapshot 1"/>
             <View style={styles.addSnapshotButton}>
-                <Text style={styles.buttonText}>Add New Snapshot</Text>
+            <CustomButtonPrimary title="Add New Snapshot" onPress={() => navigation.navigate("Add Snapshot")} style={styles.buttonText} />
             </View>
         </SafeAreaView>
     );

@@ -4,8 +4,10 @@ import { ImageBackground, SafeAreaView, StyleSheet, View, Text, Button } from 'r
 import colours from '../config/colours';
 import Register from '../components/Register';
 import CustomButtonPrimary from '../components/CustomButtonPrimary';
+import CustomButtonSecondary from '../components/CustomButtonSecondary';
+import AuthNavigator from '../navigation/AuthNavigator';
 
-function RegisterScreen(props) {
+function RegisterScreen(navigation) {
 
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -49,10 +51,6 @@ function RegisterScreen(props) {
             />
             <View>
                 <CustomButtonPrimary title="Register" onPress={handleRegister} style={styles.buttonText} />
-            </View>
-            <Text style={ styles.screenText}>Already have an account?</Text>
-            <View style={styles.loginButton}>
-                <Text style={styles.buttonText}>Login Here</Text>
             </View>
         </SafeAreaView>
     );

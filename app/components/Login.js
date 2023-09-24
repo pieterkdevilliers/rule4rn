@@ -7,11 +7,19 @@ function Login({ onUsernameChange, onPasswordChange }) {
     return (
       <View>
           <TextInput
+          autoCapitalize='none'
+          autoCorrect={false}
+          icon='account'
           style={styles.textInput}
           placeholder='Username'
           onChangeText={onUsernameChange}
           />
           <TextInput
+          autoCapitalize='none'
+          autoCorrect={false}
+          icon='lock'
+          textContentType='password'
+          secureTextEntry={true}
           style={styles.textInput}
           placeholder='Password'
           onChangeText={onPasswordChange}

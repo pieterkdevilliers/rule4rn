@@ -4,8 +4,10 @@ import { ImageBackground, SafeAreaView, StyleSheet, View, Text, Button } from 'r
 import colours from '../config/colours';
 import Login from '../components/Login';
 import CustomButtonSecondary from '../components/CustomButtonSecondary';
+import CustomButtonPrimary from '../components/CustomButtonPrimary';
+import AuthNavigator from '../navigation/AuthNavigator';
 
-function WelcomeScreen() {
+function WelcomeScreen({ navigation }) {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -38,7 +40,7 @@ function WelcomeScreen() {
             </View>
             <Text style={ styles.screenText}>Don't have an account yet?</Text>
             <View style={styles.registerButton}>
-                <Text style={styles.buttonText}>Register Here</Text>
+            <CustomButtonPrimary title="Register Here" onPress={() => navigation.navigate("Register")} style={styles.buttonText} />
             </View>
             <View>
         </View>
