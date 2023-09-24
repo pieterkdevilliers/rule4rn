@@ -5,6 +5,7 @@ import colours from '../config/colours';
 import PrimaryCard from '../components/PrimaryCard';
 import CustomButtonSecondary from '../components/CustomButtonSecondary';
 import AOLNavigator from '../navigation/AOLNavigator';
+import routes from '../navigation/routes';
 
 function AOLListScreen({navigation}) {
     return (
@@ -13,10 +14,16 @@ function AOLListScreen({navigation}) {
                 <Text style={ styles.screenLabel}>AOL List Screen</Text>
             </View>
             <View style={styles.aolContainer}>
-                <PrimaryCard title="AOL 1" onPress={() => navigation.navigate("Today")} style={styles.buttonText}/>
+                <PrimaryCard title="AOL 1" onPress={() => navigation.navigate(routes.TODAY)} style={styles.buttonText}/>
+            </View>
+            <View style={styles.aolContainer}>
+                <PrimaryCard title="AOL 2" onPress={() => navigation.navigate(routes.TODAY)} style={styles.buttonText}/>
+            </View>
+            <View style={styles.aolContainer}>
+                <PrimaryCard title="AOL 3" onPress={() => navigation.navigate(routes.TODAY)} style={styles.buttonText}/>
             </View>
             <View style={styles.addAOLButton}>
-            <CustomButtonSecondary title="Add New AOL" onPress={() => navigation.navigate("Add AOL")} style={styles.buttonText} />
+            <CustomButtonSecondary title="Add New AOL" onPress={() => navigation.navigate(routes.ADD_AOL)} style={styles.buttonText} />
                 
             </View>
         </SafeAreaView>

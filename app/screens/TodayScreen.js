@@ -6,6 +6,7 @@ import SecondaryCard from '../components/SecondaryCard';
 import CustomButtonPrimary from '../components/CustomButtonPrimary';
 import AOLNavigator from '../navigation/AOLNavigator';
 import SnapshotNavigator from '../navigation/SnapshotNavigator';
+import routes from '../navigation/routes';
 
 
 function TodayScreen({navigation}) {
@@ -16,8 +17,10 @@ function TodayScreen({navigation}) {
                 <Text style={ styles.screenLabel}>Selected AOL Title</Text>
             </View>
             <SecondaryCard title="Snapshot 1"/>
+            <SecondaryCard title="Snapshot 2"/>
+            <SecondaryCard title="Snapshot 3"/>
             <View style={styles.addSnapshotButton}>
-            <CustomButtonPrimary title="Add New Snapshot" onPress={() => navigation.navigate("Add Snapshot")} style={styles.buttonText} />
+            <CustomButtonPrimary title="Add New Snapshot" onPress={() => navigation.navigate(routes.ADD_SNAPSHOT)} style={styles.buttonText} />
             </View>
         </SafeAreaView>
     );
