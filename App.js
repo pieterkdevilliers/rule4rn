@@ -20,7 +20,7 @@ export default function App() {
 
   return (
         <NavigationContainer theme={NavigationTheme}>
-          <SnapshotNavigator />
+          <AuthNavigator />
         </NavigationContainer>
   );
 }

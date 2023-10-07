@@ -6,11 +6,14 @@ import Login from '../components/Login';
 import CustomButtonSecondary from '../components/CustomButtonSecondary';
 import CustomButtonPrimary from '../components/CustomButtonPrimary';
 import AuthNavigator from '../navigation/AuthNavigator';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import AOLNavigator from '../navigation/AOLNavigator';
 
 function WelcomeScreen({ navigation }) {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [user_id, setUserId] = useState(null);
 
     const handleUsernameChange = (text) => {
         setUsername(text);
@@ -20,11 +23,37 @@ function WelcomeScreen({ navigation }) {
         setPassword(text);
         };
 
-    const handleLogin = () => {
-        // You can now access the username and password here for further processing.
-        console.log('Username:', username);
-        console.log('Password:', password);
-        };
+        const handleLogin = async () => {
+            try {
+              const response = await fetch('https://rule4be-fc4445b7e11b.herokuapp.com/snapshots/api/v1/app-login/', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+              });
+
+              const data = await response.json();
+              console.log('Response Data on Login:', data);
+          
+              if (response.ok) {
+                // Authentication successful
+                // Redirect to the main app screen or perform any necessary actions
+                setUserId(data.user_id); // Store the user_id in state
+                console.log('Login successful');
+                const user_id = data.user_id;
+                console.log('User ID:', user_id);
+                navigation.navigate('Areas Of Life', { user_id: user_id });
+              } else {
+                // Authentication failed
+                // Handle the error and display a message to the user
+                console.error('Login failed');
+              }
+            } catch (error) {
+              // Handle network error or other exceptions
+              console.error('Login error:', error);
+            }
+          };
 
     return (
         <SafeAreaView style={styles.background}>
